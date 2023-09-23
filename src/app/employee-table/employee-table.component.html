@@ -1,0 +1,31 @@
+<div class="container">
+
+<table class="min-w-full text-center">
+    <thead>
+      <tr>
+        <th class="px-4 py-2 border-b border-gray-300">Nombre</th>
+        <th class="px-4 py-2 border-b border-gray-300">Posición</th>
+        <th class="px-4 py-2 border-b border-gray-300">Cargo</th>
+        <th class="px-4 py-2 border-b border-gray-300">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td class="px-4 py-2 border-b border-gray-300">{{ employee.name }}</td>
+        <td class="px-4 py-2 border-b border-gray-300">{{ employee.position }}</td>
+        <td class="px-4 py-2 border-b border-gray-300">{{ employee.level }}</td>
+        <td class="px-4 py-2 border-b border-gray-300">
+          <button (click)="deleteEmployee(employee._id)" class="mt-1 border border-black p-1 mr-1 px-2 bg-red-600 text-white hover:bg-red-900">X</button>
+          <a [routerLink]="'/editEmployee/' + employee._id" class="border border-black p-1 bg-stone-500 text-white hover:bg-stone-700 mt-1">Editar</a>
+        </td>
+      </tr>
+      <!-- Agrega más filas según sea necesario -->
+    </tbody>
+  </table>
+  
+  <div class="mt-4 text-center">
+    <a [routerLink]="'/addEmployee'" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Agregar Nuevo Empleado</a>
+</div>
+
+
+  </div>

@@ -1,0 +1,57 @@
+
+    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+          Nombre del Empleado
+        </label>
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="name"
+          type="text"
+          name="name"
+          placeholder="Nombre"
+          [(ngModel)]="newEmployee.name"
+        />
+        <div *ngIf="formErrors.name" class="text-red-500 text-xs italic">{{ formErrors.name }}</div>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="position">
+          Cargo del Empleado
+        </label>
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="position"
+          type="text"
+          name="position"
+          placeholder="Cargo"
+        [(ngModel)]="newEmployee.position"
+        />
+        <div *ngIf="formErrors.position" class="text-red-500 text-xs italic">{{ formErrors.position }}</div>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="level">
+          Nivel del Empleado
+        </label>
+        <select
+          class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+          id="level" [(ngModel)]="newEmployee.level" name="level"
+        >
+          <option value="junior">Junior</option>
+          <option value="mid">Mid</option>
+          <option value="senior">Senior</option>
+        </select>
+      </div>
+      <div class="flex items-center justify-between">
+        <button
+          class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="button" (click)="addEmployee()"
+        >
+          Agregar Empleado
+        </button>
+      </div>
+
+      
+    </form>
+ <div class="text-center justify-center">
+    <button routerLink="/employees"  class="bg-red-400 hover:bg-red-600 text-center text-white font-sans py-2 px-4 rounded focus:outline-none focus:shadow-outline">Volver</button>
+  </div>
